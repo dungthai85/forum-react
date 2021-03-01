@@ -3,7 +3,7 @@ const router = express.Router();
 const dbGetAPI = require('../db/dbGetAPI');
 const dbPostAPI = require('../db/dbPostAPI');
 const validateToken = require('../utilities/validateToken');
-
+//
 // Renders the comments page
 router.get('/', validateToken, function (req, res) {
     // Get the promimse form the database
