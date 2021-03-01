@@ -15,18 +15,20 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
   
-  export default function AddPost() {
+  export default function AddPost(props) {
     const classes = useStyles();
-    const [value, setValue] = React.useState('Controlled');
+
   
     const handleChange = (event) => {
-      setValue(event.target.value);
+  
     };
+
+    console.log(props);
   
     return (
       <form >
 
-        <div>
+        <div className={classes.root}>
             <h3 style={{paddingLeft: '2%', color: 'darkgray'}}>Add new post</h3>
           <TextField
             label="Title"

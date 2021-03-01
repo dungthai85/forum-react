@@ -82,7 +82,7 @@ class Home extends React.Component {
     const topics = this.state.topics;
     var items = [];
     for(var i = 0; i < topics.length; i++) {
-      items.push(<Topic topics={topics[i]} key={topics[i].topicid} />)
+      items.push(<Topic topics={topics[i]} key={topics[i].topicid}/>)
     }
     return (
 
