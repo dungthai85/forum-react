@@ -69,6 +69,7 @@ function TopDrawer() {
     setState({ ...state, top: open });
   };
 
+
   const list = (anchor) => (
     <div
       className={clsx(classes.list, {
@@ -79,11 +80,20 @@ function TopDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {['Home', 'Add Post', 'Login', 'Logout'].map((text, index) => (
-         <MenuItem component={Link} to={text.replace(/\s+/g, '')} key={index}> 
+        {['Home', 'Add Post', 'Login', 'Logout'].map((text, index) => {
+
+          if (text === 'Login') {
+            return (<MenuItem onClick={() => {window.location = 'http://localhost:3001/Login'}} key={index}> 
             <ListItemText primary={text} />
-          </MenuItem>
-        ))}
+          </MenuItem> );
+          } else {
+            var link = '/' + text.replace(" ", '');
+             return (<MenuItem component={Link} to={link} key={index}> 
+            <ListItemText primary={text} />
+          </MenuItem> );
+          }
+
+        })}
       </List>
       <Divider />
     </div>

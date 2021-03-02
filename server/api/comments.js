@@ -38,7 +38,7 @@ router.get('/', validateToken, function (req, res) {
                     }
                 }
             } 
-            res.render('../views/comment', {
+            res.send({
                 post: tableTopics, comments: tableComments, user: req.user, userTLikes: userTLikes, userCLikes: userCLikes, page: page
             });
         });

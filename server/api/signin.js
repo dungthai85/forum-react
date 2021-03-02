@@ -36,7 +36,7 @@ router.get('/signin/callback', async function (req, res) {
         // Creating a token to store in cookie
         await generateToken(res, profile);
         
-        res.redirect('/');
+        res.redirect('http://localhost:3000/');
 
     } catch (error) {
         console.log(error)

@@ -15,31 +15,32 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
   
-  export default function AddPost(props) {
+  export default function AddPost() {
     const classes = useStyles();
-
   
-    const handleChange = (event) => {
+    const handleTitle = (event) => {
   
     };
-
-    console.log(props);
   
+    const handleDesc = (event) => {
+  
+    };
+    
     return (
       <form >
-
         <div className={classes.root}>
             <h3 style={{paddingLeft: '2%', color: 'darkgray'}}>Add new post</h3>
           <TextField
             label="Title"
             rowsMax={1}
-            onChange={handleChange}
+            onChange={handleTitle}
             variant="outlined"
           />
           <br></br>
           <TextField
             label="Description"
             multiline
+            onChange={handleDesc}
             rows={5}
             variant="outlined"
           />

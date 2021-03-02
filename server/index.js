@@ -27,7 +27,7 @@ var sa = require('./api/signin');
 
 // Redirects the login to Samsung STG
 app.get('/Login', function (req, res) {
-    res.redirect('https://stg-account.samsung.com/accounts/v1/STWS/signInGate?response_type=code&locale=en&countryCode=US&client_id=3694457r8f&redirect_uri=http://localhost:3000/sa/signin/callback&state=CUSTOM_TOKEN&goBackURL=http://localhost:3000/api/topics/');
+    res.redirect('https://stg-account.samsung.com/accounts/v1/STWS/signInGate?response_type=code&locale=en&countryCode=US&client_id=3694457r8f&redirect_uri=http://localhost:3001/sa/signin/callback&state=CUSTOM_TOKEN&goBackURL=http://localhost:3001/api/topics/');
 });
 
 app.get('/Logout', function (req, res) {
@@ -36,9 +36,9 @@ app.get('/Logout', function (req, res) {
     var topicid = req.query.topic;
     res.clearCookie('access_token');
     if(home === "home"){
-        res.redirect(`https://stg-account.samsung.com/accounts/v1/STWS/signOutGate?client_id=3694457r8f&state=CUSTOM_TOKEN&signOutURL=http://localhost:3000/api/topics/?page=${page}`);
+        res.redirect(`https://stg-account.samsung.com/accounts/v1/STWS/signOutGate?client_id=3694457r8f&state=CUSTOM_TOKEN&signOutURL=http://localhost:3001/api/topics/?page=${page}`);
     } else {
-        res.redirect(`https://stg-account.samsung.com/accounts/v1/STWS/signOutGate?client_id=3694457r8f&state=CUSTOM_TOKEN&signOutURL=http://localhost:3000/api/comments/?topic=${topicid}`);
+        res.redirect(`https://stg-account.samsung.com/accounts/v1/STWS/signOutGate?client_id=3694457r8f&state=CUSTOM_TOKEN&signOutURL=http://localhost:3001/api/comments/?topic=${topicid}`);
     }
 });
 

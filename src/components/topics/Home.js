@@ -17,34 +17,21 @@ class Home extends React.Component {
 
     this.handlePage = this.handlePage.bind(this);
 
-    this.getTopics(1)
-    .then(res => {
-      this.setState({
-        topics: res.topics,
-        userLikes: res.userLikes,
-        user: res.user,
-        currentpage: res.page.currentPage,
-        pagecount: res.page.pageCount});
-  }
-    )
-    .catch(err => console.log(err));
-
   }
 
   componentDidMount() {
     // Call our fetch function below once the component mounts
-    // this.getTopics(1)
-    //   .then(res => {
-    //     console.log("STATE1: " + this.state.currentpage);
-    //     this.setState({
-    //       topics: res.topics,
-    //       userLikes: res.userLikes,
-    //       user: res.user,
-    //       currentpage: res.page.currentPage,
-    //       pagecount: res.page.pageCount});
-    // }
-    //   )
-    //   .catch(err => console.log(err));
+    this.getTopics(1)
+      .then(res => {
+        this.setState({
+          topics: res.topics,
+          userLikes: res.userLikes,
+          user: res.user,
+          currentpage: res.page.currentPage,
+          pagecount: res.page.pageCount});
+    }
+      )
+      .catch(err => console.log(err));
   }
 
   componentDidUpdate(prevProps, prevState) {

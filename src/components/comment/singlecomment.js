@@ -5,7 +5,6 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import { Container } from '@material-ui/core';
-import { Link } from 'react-router-dom';
 
 export default function TopicCard(props) {
 
@@ -32,20 +31,17 @@ export default function TopicCard(props) {
         time = seconds === 1 ? seconds + " second ago" : seconds + " seconds ago";
     }
 
-    const topic = "Comment?topic=" + props.topics.topicid;
+
 
 
     return (
         <Container maxWidth="lg">
             <br></br>
         <Card>
-            <CardActionArea component={Link} to={topic} >
+            <CardActionArea >
                 <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
-                        {props.topics.topicname}
-                    </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
-                        {props.topics.topicdetails}
+                        {props.topics.commentdetails}
                     </Typography>
                 </CardContent>
             </CardActionArea>
